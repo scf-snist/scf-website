@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 46% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 46% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 46% 14%;
+    --primary: 224 58% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 88% 52%;
+    --secondary-foreground: 224 46% 14%;
+    --muted: 210 30% 96%;
+    --muted-foreground: 223 18% 38%;
+    --accent: 144 66% 47%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 21% 86%;
+    --input: 220 21% 86%;
+    --ring: 224 58% 30%;
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  *::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply min-h-screen bg-background font-sans text-foreground antialiased;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(circle at 0% 0%, rgba(29, 63, 140, 0.12) 0%, rgba(255, 255, 255, 0) 36%),
+      radial-gradient(circle at 100% 18%, rgba(238, 185, 26, 0.18) 0%, rgba(255, 255, 255, 0) 34%);
+  }
+
+  ::selection {
+    background-color: rgba(29, 63, 140, 0.2);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .focus-ring {
+    @apply outline-none ring-2 ring-primary/60 ring-offset-2 ring-offset-background;
+  }
+
+  .glass-panel {
+    @apply border border-white/40 bg-white/10 backdrop-blur-xl;
+  }
+}
