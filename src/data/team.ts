@@ -2,93 +2,92 @@ export type TeamMember = {
   id: number
   name: string
   role: string
-  photo: string
 }
 
 export const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Dr. S. Prakash",
+    name: "Team Member 01",
     role: "President",
-    photo:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=640&q=80",
   },
   {
     id: 2,
-    name: "Anitha Menon",
-    role: "Vice President",
-    photo:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=640&q=80",
+    name: "Team Member 02",
+    role: "General Secretary",
   },
   {
     id: 3,
-    name: "Rahul Verma",
-    role: "Secretary",
-    photo:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=640&q=80",
+    name: "Team Member 03",
+    role: "Vice President",
   },
   {
     id: 4,
-    name: "Nirmala Devi",
+    name: "Team Member 04",
     role: "Joint Secretary",
-    photo:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=640&q=80",
   },
   {
     id: 5,
-    name: "Karthik Iyer",
+    name: "Team Member 05",
     role: "Treasurer",
-    photo:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=640&q=80",
   },
   {
     id: 6,
-    name: "Dr. Lakshmi Rao",
-    role: "Medical Director",
-    photo:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=640&q=80",
+    name: "Team Member 06",
+    role: "Organizing",
   },
   {
     id: 7,
-    name: "Arjun Kumar",
-    role: "Program Director",
-    photo:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=640&q=80",
+    name: "Team Member 07",
+    role: "Organizing",
   },
   {
     id: 8,
-    name: "Priya Nair",
-    role: "Outreach Lead",
-    photo:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=640&q=80",
+    name: "Team Member 08",
+    role: "Publicity",
   },
   {
     id: 9,
-    name: "Gokul Krishna",
-    role: "Volunteer Coordinator",
-    photo:
-      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=640&q=80",
+    name: "Team Member 09",
+    role: "Publicity",
   },
   {
     id: 10,
-    name: "Sneha Patel",
-    role: "Partnerships Manager",
-    photo:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=640&q=80",
+    name: "Team Member 10",
+    role: "Documentation",
   },
   {
     id: 11,
-    name: "Rohan Das",
-    role: "Communications Lead",
-    photo:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=640&q=80",
+    name: "Team Member 11",
+    role: "Design",
   },
   {
     id: 12,
-    name: "Meera Joseph",
-    role: "Operations Manager",
-    photo:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=640&q=80",
+    name: "Team Member 12",
+    role: "Design",
+  },
+  {
+    id: 13,
+    name: "Team Member 13",
+    role: "Marketing",
+  },
+  {
+    id: 14,
+    name: "Team Member 14",
+    role: "Marketing",
+  },
+  {
+    id: 15,
+    name: "Team Member 15",
+    role: "Abhaya",
+  },
+  {
+    id: 16,
+    name: "Team Member 16",
+    role: "Hospitality Head",
+  },
+  {
+    id: 17,
+    name: "Team Member 17",
+    role: "PR",
   },
 ]
-

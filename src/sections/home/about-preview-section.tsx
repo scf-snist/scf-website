@@ -6,8 +6,7 @@ import { AnimatedReveal } from "@/components/layout/animated-reveal"
 import { SectionWrapper } from "@/components/layout/section-wrapper"
 import { Button } from "@/components/ui/button"
 
-const aboutImage =
-  "https://images.unsplash.com/photo-1528886238093-8e9f1b8fcf95?auto=format&fit=crop&w=1200&q=80"
+const aboutImage = "/teamimage.jpeg"
 
 export function AboutPreviewSection() {
   return (
@@ -37,13 +36,20 @@ export function AboutPreviewSection() {
         <AnimatedReveal delay={0.12}>
           <div className="space-y-5 rounded-2xl border border-border/70 bg-white p-7 shadow-ngo-card">
             <p className="leading-relaxed text-foreground/80">
-              We run awareness drives, mobile screenings, and treatment continuity programs with
-              one mission: no patient should stop care because of cost, distance, or lack of
-              support.
-            </p>
-            <p className="leading-relaxed text-foreground/80">
-              Our volunteer networks, medical partners, and transparent fund allocation model allow
-              every contribution to become practical, traceable impact.
+              We run awareness drives, mobile screening programs, and treatment-continuity
+              initiatives to ensure that cancer patients receive the care they need without
+              interruption. <br></br> <br></br>
+              Our mission is simple: no patient should have to stop treatment because
+              of financial hardship, long travel distances, or lack of guidance and support.
+              Through strong volunteer networks and partnerships with dedicated medical
+              professionals and hospitals, we bring essential services closer to communities that
+              need them most.  <br></br>             <br></br>Every donation and effort is managed through a transparent
+              fund-allocation model, ensuring accountability and trust. This approach allows every
+              contribution - big or small - to translate into meaningful, practical, and traceable
+              impact in the lives of patients and their families.
+
+              <br></br> 
+              Believe There Is A Hope
             </p>
             <Button asChild className="rounded-full px-6" variant="outline">
               <Link to="/about">

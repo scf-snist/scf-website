@@ -11,18 +11,35 @@ const quickLinks = [
   { label: "Join SCF", path: "/join" },
 ]
 
-const legalLinks = [
-  { label: "Privacy Policy", path: "#" },
-  { label: "Terms of Service", path: "#" },
-  { label: "Annual Reports", path: "#" },
-  { label: "Compliance", path: "#" },
+const footerEventLinks = [
+  { label: "WALK FOR A HOPE", path: "/events" },
+  { label: "MAKE A WISH", path: "/events" },
+  { label: "BLOOD DONATION", path: "/events" },
+  { label: "STEP CELL DONATION", path: "/events" },
+  { label: "AWARNESS SESSIONS", path: "/events" },
 ]
 
 const socialLinks = [
-  { label: "Facebook", icon: Facebook, path: "#" },
-  { label: "Instagram", icon: Instagram, path: "#" },
-  { label: "LinkedIn", icon: Linkedin, path: "#" },
-  { label: "YouTube", icon: Youtube, path: "#" },
+  {
+    label: "Facebook",
+    icon: Facebook,
+    path: "https://www.facebook.com/share/1KcX2i5K5Z/?mibextid=wwXIfr",
+  },
+  {
+    label: "Instagram",
+    icon: Instagram,
+    path: "https://www.instagram.com/scf.snist?igsh=aTFtdTg0b2FpczRj",
+  },
+  {
+    label: "LinkedIn",
+    icon: Linkedin,
+    path: "https://www.linkedin.com/company/sreenidhi-cancer-foundation/",
+  },
+  {
+    label: "YouTube",
+    icon: Youtube,
+    path: "https://youtube.com/@sreenidhicancerfoundation9143?si=bAThjJt8Aw79T-SX",
+  },
 ]
 
 export function Footer() {
@@ -39,11 +56,18 @@ export function Footer() {
             <div className="mt-5 space-y-2 text-sm text-white/85">
               <p className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-secondary" />
-                +91 98765 43210
+                <a className="hover:text-secondary" href="tel:6305467998">
+                  6305467998
+                </a>
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-secondary" />
-                hello@scf.org
+                <a
+                  className="break-all hover:text-secondary"
+                  href="mailto:sreenidhicancerfoundation@sreenidhi.edu.in"
+                >
+                  sreenidhicancerfoundation@sreenidhi.edu.in
+                </a>
               </p>
             </div>
           </div>
@@ -65,14 +89,14 @@ export function Footer() {
 
           <div>
             <h4 className="text-sm font-extrabold uppercase tracking-[0.16em] text-white/80">
-              Legal
+              Events
             </h4>
-            <ul className="mt-4 space-y-2.5 text-sm text-white/80">
-              {legalLinks.map((item) => (
+            <ul className="mt-4 space-y-2 text-sm text-white/80">
+              {footerEventLinks.map((item) => (
                 <li key={item.label}>
-                  <a className="transition hover:text-secondary" href={item.path}>
+                  <Link className="transition hover:text-secondary" to={item.path}>
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -89,15 +113,15 @@ export function Footer() {
                   className="grid h-10 w-10 place-items-center rounded-full border border-white/35 bg-white/10 text-white transition hover:-translate-y-0.5 hover:border-secondary hover:text-secondary"
                   href={item.path}
                   key={item.label}
+                  rel="noreferrer"
+                  target="_blank"
                 >
                   <item.icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
             <p className="mt-4 text-sm text-white/75">
-              NGO Reg: TN/SCF/2017/4821
-              <br />
-              80G | 12A compliant
+              Reg No: 306/2016
             </p>
           </div>
         </div>

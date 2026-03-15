@@ -6,10 +6,10 @@ export type ImpactMetric = {
 }
 
 export const impactMetrics: ImpactMetric[] = [
-  { id: "awareness", label: "Awareness Drives", value: 128, suffix: "+" },
-  { id: "blood", label: "Blood Units Collected", value: 25600, suffix: "+" },
-  { id: "volunteers", label: "Volunteers", value: 740, suffix: "+" },
-  { id: "families", label: "Families Supported", value: 1800, suffix: "+" },
+  { id: "awareness", label: "Awareness Drives", value: 75, suffix: "+" },
+  { id: "blood", label: "Blood Units Collected", value: 1000, suffix: "+" },
+  { id: "volunteers", label: "Volunteers", value: 600, suffix: "+" },
+  { id: "children", label: "Children Supported", value: 2500, suffix: "+" },
 ]
 
 export type Testimonial = {
@@ -23,56 +23,34 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Nithya S.",
-    role: "Cancer Survivor",
+    name: "Dr. T Ch Siva Reddy",
+    role: "Principal - SNIST",
     quote:
-      "SCF stood beside my family during the hardest months. Their care gave us courage and dignity.",
-    avatar:
-      "https://images.unsplash.com/photo-1506863530036-1efeddceb993?auto=format&fit=crop&w=240&q=80",
+      "The initiatives led by the Sreenidhi Cancer Foundation truly reflect the spirit of compassion and social responsibility that we encourage at SNIST. It is inspiring to see our students actively participating in programs that create awareness, support patients, and bring positive change to society. Such efforts not only help the community but also shape our students into responsible and empathetic leaders.",
+    avatar: "/sivareddy.jpg",
   },
   {
     id: 2,
-    name: "Dr. Arjun Rao",
-    role: "Volunteer Oncologist",
+    name: "Dr. A Purushotham",
+    role: "Dean - Student Affairs",
     quote:
-      "From screening camps to treatment navigation, this team runs with precision and deep empathy.",
-    avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=80",
+      "Student-led initiatives like the Sreenidhi Cancer Foundation demonstrate the power of youth when guided by empathy and purpose. These activities provide students with an opportunity to contribute meaningfully to society while developing leadership, teamwork, and service values that extend far beyond the classroom.",
+    avatar: "/purushottam.jpg",
   },
   {
     id: 3,
-    name: "Keerthana M.",
-    role: "Program Donor",
+    name: "Dr. Naadem Divya",
+    role: "Faculty Advisor",
     quote:
-      "The transparency reports and measurable outcomes made it easy to trust every rupee donated.",
-    avatar:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=240&q=80",
+      "Being part of the Sreenidhi Cancer Foundation as a faculty advisor has been an incredibly rewarding experience. Watching students come together to organize awareness drives, hospital visits, and support programs for cancer patients shows how education can go hand in hand with compassion and community service.",
+    avatar: "/divya.jpg",
   },
   {
     id: 4,
-    name: "Ravi K.",
-    role: "Patient Caregiver",
+    name: "Dr. Aruna Varanasi",
+    role: "Dean - Trainings",
     quote:
-      "SCF helped us coordinate hospital visits and medicine support when we had no clear path forward.",
-    avatar:
-      "https://images.unsplash.com/photo-1542178243-bc20204b769f?auto=format&fit=crop&w=240&q=80",
-  },
-  {
-    id: 5,
-    name: "Dr. Meena Iyer",
-    role: "Screening Camp Partner",
-    quote:
-      "Their outreach model is practical and compassionate. Follow-up support makes their impact truly sustainable.",
-    avatar:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=240&q=80",
-  },
-  {
-    id: 6,
-    name: "Sanjay P.",
-    role: "Volunteer Lead",
-    quote:
-      "Every campaign is organized with clarity, accountability, and respect for the families we serve.",
-    avatar:
-      "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=240&q=80",
+      "The Sreenidhi Cancer Foundation is a wonderful example of how students can combine knowledge, empathy, and teamwork to make a real difference. Initiatives like these encourage young minds to look beyond academics and contribute towards building a more supportive and caring society.",
+    avatar: "/aruna.jpg",
   },
 ]

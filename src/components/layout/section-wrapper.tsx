@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from "react"
+import type { PropsWithChildren, ReactNode } from "react"
 
 import { cn } from "@/lib/utils"
 import { Container } from "./container"
@@ -6,8 +6,8 @@ import { Container } from "./container"
 type SectionWrapperProps = PropsWithChildren<{
   id?: string
   eyebrow?: string
-  title?: string
-  description?: string
+  title?: ReactNode
+  description?: ReactNode
   className?: string
 }>
 
@@ -42,4 +42,3 @@ export function SectionWrapper({
     </section>
   )
 }
-
