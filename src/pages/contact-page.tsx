@@ -1,6 +1,7 @@
+import emailjs from "@emailjs/browser"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { AnimatePresence, motion } from "framer-motion"
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -22,6 +23,33 @@ const contactSchema = z.object({
 
 type ContactFormValues = z.infer<typeof contactSchema>
 
+const EMAILJS_SERVICE_ID = "service_l2o1lbd"
+const EMAILJS_TEMPLATE_ID = "template_1zkdnwj"
+const EMAILJS_PUBLIC_KEY = "_jonDyVL1_oa5114D"
+
+const socialLinks = [
+  {
+    label: "Facebook",
+    icon: Facebook,
+    url: "https://www.facebook.com/share/1KcX2i5K5Z/?mibextid=wwXIfr",
+  },
+  {
+    label: "Instagram",
+    icon: Instagram,
+    url: "https://www.instagram.com/scf.snist?igsh=aTFtdTg0b2FpczRj",
+  },
+  {
+    label: "LinkedIn",
+    icon: Linkedin,
+    url: "https://www.linkedin.com/company/sreenidhi-cancer-foundation/",
+  },
+  {
+    label: "YouTube",
+    icon: Youtube,
+    url: "https://youtube.com/@sreenidhicancerfoundation9143?si=bAThjJt8Aw79T-SX",
+  },
+]
+
 export default function ContactPage() {
   const [sent, setSent] = useState(false)
   const {
@@ -39,11 +67,28 @@ export default function ContactPage() {
     },
   })
 
-  const onSubmit = async () => {
-    await new Promise((resolve) => setTimeout(resolve, 600))
-    reset()
-    setSent(true)
-    window.setTimeout(() => setSent(false), 2200)
+  const onSubmit = async (values: ContactFormValues) => {
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: values.name,
+          from_email: values.email,
+          subject: values.subject,
+          message: values.message,
+        },
+        EMAILJS_PUBLIC_KEY,
+      )
+
+      window.alert("Message sent successfully.")
+      reset()
+      setSent(true)
+      window.setTimeout(() => setSent(false), 2200)
+    } catch {
+      setSent(false)
+      window.alert("Failed to send message. Please try again.")
+    }
   }
 
   useSeo({
@@ -57,7 +102,7 @@ export default function ContactPage() {
       className="pt-16"
       description="We respond to donor, volunteer, and partnership enquiries with care and clarity."
       eyebrow="Contact"
-      title="Let’s build impact together"
+      title="Let's build impact together"
     >
       <div className="grid gap-6 lg:grid-cols-2">
         <Card className="overflow-hidden">
@@ -65,27 +110,37 @@ export default function ContactPage() {
             <div className="space-y-3 text-sm text-foreground/80">
               <p className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-primary" />
-                124 Care Avenue, Chennai, India
+                Room No: 8002, Central Library Block, SNIST
               </p>
               <p className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                +91 98765 43210
+                <a className="hover:text-primary" href="tel:6305467998">
+                  6305467998
+                </a>
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
-                connect@scf.org
+                <a
+                  className="break-all hover:text-primary"
+                  href="mailto:sreenidhicancerfoundation@sreenidhi.edu.in"
+                >
+                  sreenidhicancerfoundation@sreenidhi.edu.in
+                </a>
               </p>
             </div>
 
-            <div className="flex gap-2">
-              {[Facebook, Instagram, Linkedin].map((Icon, index) => (
-                <button
+            <div className="flex flex-wrap gap-2">
+              {socialLinks.map((item) => (
+                <a
+                  aria-label={item.label}
                   className="grid h-10 w-10 place-items-center rounded-full border border-border bg-white transition hover:-translate-y-0.5 hover:border-primary hover:text-primary"
-                  key={index}
-                  type="button"
+                  href={item.url}
+                  key={item.label}
+                  rel="noreferrer"
+                  target="_blank"
                 >
-                  <Icon className="h-4 w-4" />
-                </button>
+                  <item.icon className="h-4 w-4" />
+                </a>
               ))}
             </div>
 
@@ -93,16 +148,33 @@ export default function ContactPage() {
               <iframe
                 className="h-72 w-full"
                 loading="lazy"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=80.245%2C13.02%2C80.295%2C13.08&layer=mapnik"
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Room%20No%208002%20Central%20Library%20Block%20SNIST&output=embed"
                 title="SCF location map"
               />
             </div>
+            <a
+              className="inline-block text-sm font-medium text-primary hover:underline"
+              href="https://maps.app.goo.gl/sfDSjKhFwBAKUn2M6"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Open map in Google Maps
+            </a>
           </CardContent>
         </Card>
 
         <Card>
           <CardContent className="p-6">
             <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
+              <div className="space-y-2">
+                <h3 className="text-xl font-semibold text-foreground">Send Us a Message</h3>
+                <p className="text-sm leading-relaxed text-foreground/70">
+                  Have a question about donations, volunteering, or partnerships? Fill out the
+                  form and our team will get back to you as soon as possible.
+                </p>
+              </div>
+
               <FloatingField id="name" label="Name">
                 <Input className="peer pt-5" id="name" placeholder=" " {...register("name")} />
               </FloatingField>
@@ -160,4 +232,3 @@ export default function ContactPage() {
     </SectionWrapper>
   )
 }
-

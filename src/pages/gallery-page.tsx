@@ -44,19 +44,19 @@ export default function GalleryPage() {
       eyebrow="Moments of Impact"
       title="SCF Gallery"
     >
-      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+      <div className="grid grid-cols-1 justify-items-center gap-4 lg:grid-cols-2 xl:grid-cols-3">
         {galleryImages.map((image) => (
           <button
-            className="group mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl border border-border/60 bg-white shadow-ngo-card"
+            className="group block w-full max-w-[375px] overflow-hidden rounded-xl border border-border/60 bg-white shadow-ngo-card"
             key={image.id}
             onClick={() => setSelectedId(image.id)}
             type="button"
           >
             <LazyImage
               alt={image.alt}
-              className="transition duration-500 group-hover:scale-105"
+              className="h-full w-full transition duration-500 group-hover:scale-105"
               src={image.src}
-              wrapperClassName="max-h-[430px]"
+              wrapperClassName="aspect-[375/255] w-full bg-muted"
             />
           </button>
         ))}
@@ -74,9 +74,9 @@ export default function GalleryPage() {
               <div className="relative overflow-hidden rounded-lg">
                 <LazyImage
                   alt={selectedImage.alt}
-                  className="max-h-[80vh] w-full object-contain"
+                  className="h-full w-full object-contain"
                   src={selectedImage.src}
-                  wrapperClassName="bg-black"
+                  wrapperClassName="aspect-[16/10] bg-black"
                 />
                 <button
                   aria-label="Previous image"
@@ -102,4 +102,3 @@ export default function GalleryPage() {
     </SectionWrapper>
   )
 }
-

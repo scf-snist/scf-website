@@ -8,14 +8,14 @@ export default function AboutPage() {
   useSeo({
     title: "About Us",
     description:
-      "Learn about Sreenidhi Cancer Foundation and meet our leadership team driving cancer care support programs.",
+      "Sreenidhi Cancer Foundation is a student-run non-profit focused on awareness, early detection, and compassionate community support.",
   })
 
   return (
     <>
       <SectionWrapper
         className="pt-16"
-        description="Sreenidhi Cancer Foundation is a people-first NGO focused on early awareness, treatment support, and long-term dignity for families facing cancer."
+        description="Sreenidhi Cancer Foundation (SCF) is a student-run non-profit founded by students of Sreenidhi Institute of Science and Technology, Hyderabad."
         eyebrow="About Us"
         title="Believe There Is A Hope"
       >
@@ -24,8 +24,8 @@ export default function AboutPage() {
             <CardContent className="p-6">
               <h3 className="font-display text-2xl text-primary">Our Mission</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                Expand access to timely and affordable cancer care through medical partnerships,
-                community outreach, and transparent donor support.
+                To fight cancer through awareness, early detection, and compassionate community
+                support.
               </p>
             </CardContent>
           </Card>
@@ -33,8 +33,8 @@ export default function AboutPage() {
             <CardContent className="p-6">
               <h3 className="font-display text-2xl text-primary">Our Vision</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                A future where no patient stops treatment because of financial, social, or
-                logistical barriers.
+                To build a cancer-aware society where early detection and collective support save
+                lives.
               </p>
             </CardContent>
           </Card>
@@ -42,8 +42,7 @@ export default function AboutPage() {
             <CardContent className="p-6">
               <h3 className="font-display text-2xl text-primary">Our Values</h3>
               <p className="mt-2 text-sm leading-relaxed text-foreground/75">
-                Compassion, accountability, teamwork, and measurable impact in every program we
-                run.
+                Compassion, awareness, service, integrity, and commitment to community well-being.
               </p>
             </CardContent>
           </Card>
@@ -52,7 +51,7 @@ export default function AboutPage() {
 
       <SectionWrapper
         className="bg-gradient-to-b from-muted/45 to-white"
-        description="Leadership and operations team across 12 key positions."
+        description="Leadership and operations team across 17 key positions."
         eyebrow="Our Team"
         title="People behind SCF"
       >
@@ -62,13 +61,16 @@ export default function AboutPage() {
               <CardContent className="p-6">
                 <h3 className="font-display text-2xl text-primary">About SCF</h3>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-                  Sreenidhi Cancer Foundation was built by caregivers, doctors, and community
-                  volunteers who believed that treatment access should never depend on a family&apos;s
-                  income or location.
+                  Sreenidhi Cancer Foundation (SCF) is a student-run non-profit organization
+                  founded by students of Sreenidhi Institute of Science and Technology, Hyderabad.
+                  Established in 2015 and registered in 2016, SCF works to support people in the
+                  fight against cancer.
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-                  We work from prevention to treatment continuity, combining medical partnerships,
-                  on-ground outreach, and transparent donor accountability.
+                  The foundation focuses on spreading awareness, promoting early detection, and
+                  supporting cancer patients. It was inspired by the story of a young leukemia
+                  patient named Shravani. SCF brings students together to create meaningful social
+                  impact through health and community initiatives.
                 </p>
               </CardContent>
             </Card>
@@ -77,13 +79,14 @@ export default function AboutPage() {
               <CardContent className="p-6">
                 <h3 className="font-display text-2xl text-primary">How We Work</h3>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-                  SCF programs are designed with measurable targets: screenings delivered,
-                  follow-ups completed, treatment interruptions reduced, and family support
-                  milestones achieved.
+                  SCF organizes cancer awareness programs in colleges and communities. We conduct
+                  free cancer screening and health camps to encourage early detection.
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-                  This systems-first approach helps us scale impact without losing compassion at the
-                  individual level.
+                  The foundation also hosts blood donation camps and stem-cell donor registration
+                  drives. Volunteers engage with patients through hospital visits and support
+                  initiatives. Through campaigns and events, SCF promotes a healthier and more
+                  aware society.
                 </p>
               </CardContent>
             </Card>
@@ -93,13 +96,7 @@ export default function AboutPage() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {teamMembers.map((member, index) => (
             <AnimatedReveal delay={index * 0.04} key={member.id}>
-              <Card className="overflow-hidden border-border/70 hover:-translate-y-1 hover:shadow-ngo-soft">
-                <img
-                  alt={member.name}
-                  className="h-64 w-full object-cover"
-                  loading="lazy"
-                  src={member.photo}
-                />
+              <Card className="border-border/70 hover:-translate-y-1 hover:shadow-ngo-soft">
                 <CardContent className="p-4">
                   <p className="font-semibold text-foreground">{member.name}</p>
                   <p className="text-sm font-medium text-primary">{member.role}</p>
